@@ -9,7 +9,7 @@ function App() {
   // Fetch messages from the backend
   const fetchMessages = async () => {
     try {
-      const response = await fetch('https://chatbot-backend-nodejs.vercel.app/messages');
+      const response = await fetch('http://localhost:5000/messages');
       const data = await response.json();
       setMessages(data.messages); // Update messages in the state
     } catch (error) {
@@ -37,7 +37,7 @@ function App() {
 
     try {
       // Send the user's message to the backend
-      const response = await fetch('https://chatbot-backend-nodejs.vercel.app/send', {
+      const response = await fetch('http://localhost:5000/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
